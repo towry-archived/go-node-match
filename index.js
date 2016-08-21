@@ -9,12 +9,12 @@ function main() {
 			return;
 		}
 
-		var buf = new Buffer(1);
+		var buf = new Buffer(100);
 		var count = 0;
 
 		for (;;) {
 
-			var num = fs.readSync(fd, buf, 0, 1, null);
+			var num = fs.readSync(fd, buf, 0, 100, null);
 			count += num;
 			if (num === 0) {
 				break;
